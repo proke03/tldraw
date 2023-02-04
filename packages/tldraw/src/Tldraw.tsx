@@ -8,6 +8,8 @@ import * as React from 'react'
 import { ErrorBoundary as _Errorboundary } from 'react-error-boundary'
 import { IntlProvider } from 'react-intl'
 import { ToastContainer } from 'react-toastify'
+import { injectStyle } from 'react-toastify/dist/inject-style'
+// import 'react-toastify/dist/ReactToastify.css'
 import { ContextMenu } from '~components/ContextMenu'
 import { ErrorFallback } from '~components/ErrorFallback'
 import { FocusButton } from '~components/FocusButton'
@@ -33,6 +35,7 @@ import { dark, styled } from '~styles'
 import { TDDocument, TDStatus } from '~types'
 
 const ErrorBoundary = _Errorboundary as any
+injectStyle()
 
 export interface TldrawProps extends TDCallbacks {
   /**
