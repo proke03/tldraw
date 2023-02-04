@@ -7,6 +7,8 @@ import { CursorComponent, Renderer } from '@tldraw/core'
 import * as React from 'react'
 import { ErrorBoundary as _Errorboundary } from 'react-error-boundary'
 import { IntlProvider } from 'react-intl'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { ContextMenu } from '~components/ContextMenu'
 import { ErrorFallback } from '~components/ErrorFallback'
 import { FocusButton } from '~components/FocusButton'
@@ -605,6 +607,18 @@ const InnerTldraw = React.memo(function InnerTldraw({
             </StyledUI>
           )}
         </StyledLayout>
+        <ToastContainer
+          position="top-center"
+          autoClose={1500}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover
+          theme={app.settings.isDarkMode ? 'dark' : 'light'}
+        />
       </IntlProvider>
     </ContainerContext.Provider>
   )
